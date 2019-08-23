@@ -4,14 +4,11 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:orientation="vertical"
-    android:background="@color/gray"
-    tools:context="com.one.greendaohope.ui.MainActivity">
+    tools:context=".ui.UserListActivity">
 
     <android.support.v7.widget.RecyclerView
+        android:padding="@dimen/dp_3"
         android:id="@+id/rv"
-        android:layout_marginTop="@dimen/dp_8"
         android:layout_width="match_parent"
         android:layout_height="match_parent" />
-
-
 </LinearLayout>

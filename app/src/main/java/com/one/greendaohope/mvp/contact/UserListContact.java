@@ -1,0 +1,22 @@
+package com.one.greendaohope.mvp.contact;
+
+import com.one.greendaohope.entity.UserEntity;
+
+import java.util.List;
+
+/**
+ * @author LinDingQiang
+ * @time 2019/8/22 17:36
+ * @email dingqiang.l@verifone.cn
+ */
+public interface UserListContact {
+    public interface View {
+       void loadAllDatasSuccess(List<UserEntity> userEntityList);
+       void optionFail(String errMsg);
+       void optionSuccess(String sucMsg);
+    }
+    public interface Presenter{
+        void loadAllDatas();
+        void deleteUser(String phoneNo);
+    }
+}
