@@ -21,7 +21,7 @@ public class UserListPresenter implements UserListContact.Presenter {
 
     @Override
     public void loadAllDatas() {
-        List<UserEntity> entityList = DBUtils.loadAll(UserEntity.class);
+        List<UserEntity> entityList = DBUtils.loadAllUsers();
         if (entityList == null || entityList.size() == 0) {
             context.optionFail("获取数据为空");
             return;
@@ -36,8 +36,24 @@ public class UserListPresenter implements UserListContact.Presenter {
             context.optionFail("该用户不存在");
             return;
         }
-        DBUtils.delete(entity);
+        DBUtils.deleteUser(entity);
         context.optionSuccess("删除成功");
+    }
+
+    @Override
+    public void saveOrUpdateUser(UserEntity userEntity, boolean isAdd) {
+        if (isAdd) {
+            UserEntity dbEntity = DBUtils.loadUserByPhoneNo(userEntity.getPhone());
+            if (dbEntity != null) {
+                context.optionFail("用户已存在");
+                return;
+            }
+            DBUtils.saveUser(userEntity);
+            context.addSuccess("添加成功");
+        } else {
+            DBUtils.updateUser(userEntity);
+            context.updateSuccess("修改成功");
+        }
     }
 
 }

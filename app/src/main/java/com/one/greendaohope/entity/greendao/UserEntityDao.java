@@ -47,6 +47,9 @@ public class UserEntityDao extends AbstractDao<UserEntity, Long> {
                 "\"USER_NAME\" TEXT," + // 1: userName
                 "\"PHONE\" TEXT," + // 2: phone
                 "\"ADDRESS\" TEXT);"); // 3: address
+        // Add Indexes
+        db.execSQL("CREATE UNIQUE INDEX " + constraint + "IDX_USER_PHONE ON \"USER\"" +
+                " (\"PHONE\" ASC);");
     }
 
     /** Drops the underlying database table. */

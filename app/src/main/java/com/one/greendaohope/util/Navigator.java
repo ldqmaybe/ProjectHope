@@ -3,7 +3,7 @@ package com.one.greendaohope.util;
 import android.content.Context;
 import android.content.Intent;
 
-import com.one.greendaohope.ui.AddActivity;
+import com.one.greendaohope.entity.UserEntity;
 import com.one.greendaohope.ui.UserDetailActivity;
 import com.one.greendaohope.ui.UserListActivity;
 
@@ -27,13 +27,6 @@ public class Navigator {
         return Holder.NAVIGATOR;
     }
 
-    public void navigate2Add(Context context) {
-        LogUtils.i(TAG, "navigate2Add: executed.");
-        if (context != null) {
-            Intent intentToAdd = AddActivity.getCallingIntent(context);
-            context.startActivity(intentToAdd);
-        }
-    }
     public void navigate2UserList(Context context) {
         LogUtils.i(TAG, "navigate2UserList: executed.");
         if (context != null) {
@@ -41,10 +34,11 @@ public class Navigator {
             context.startActivity(intentToLogin);
         }
     }
-    public void navigate2UserDetail(Context context) {
+    public void navigate2UserDetail(Context context, UserEntity userEntity) {
         LogUtils.i(TAG, "navigate2UserDetail: executed.");
         if (context != null) {
             Intent intentToUserDetail = UserDetailActivity.getCallingIntent(context);
+            intentToUserDetail.putExtra("UserEntity",userEntity);
             context.startActivity(intentToUserDetail);
         }
     }

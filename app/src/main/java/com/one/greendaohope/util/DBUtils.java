@@ -17,31 +17,37 @@ import java.util.List;
  * @email dingqiang.l@verifone.cn
  */
 public class DBUtils {
-    private static DaoSession daoSession;
+    private static UserEntityDao userEntityDao;
 
     public static synchronized void init(Context context) {
-        daoSession = DaoManager.getInstance(context).getDaoSession();
+        DaoSession daoSession = DaoManager.getInstance(context).getDaoSession();
+        userEntityDao = daoSession.getUserEntityDao();
     }
 
-    public static boolean insert(Object object) {
-        return daoSession.insert(object) != -1;
+    public static void saveUser(UserEntity entity) {
+        userEntityDao.save(entity) ;
     }
 
-    public static <T> List<T> loadAll(Class<T> entityClass) {
-        return daoSession.loadAll(entityClass);
+    public static  List<UserEntity> loadAllUsers() {
+        return  userEntityDao.loadAll();
     }
 
     public static UserEntity loadUserByPhoneNo(String phoneNo) {
-        QueryBuilder queryBuilder = daoSession.queryBuilder(UserEntity.class);
+        QueryBuilder<UserEntity> queryBuilder = userEntityDao.queryBuilder();
         queryBuilder.where(UserEntityDao.Properties.Phone.eq(phoneNo));
-        return (UserEntity) queryBuilder.unique();
+        return queryBuilder.unique();
+    }
+    public static UserEntity loadUserId(long userId) {
+        QueryBuilder<UserEntity> queryBuilder = userEntityDao.queryBuilder();
+        queryBuilder.where(UserEntityDao.Properties.Id.eq(userId));
+        return queryBuilder.unique();
     }
 
-    public static void delete(UserEntity entity) {
-        daoSession.delete(entity);
+    public static void deleteUser(UserEntity entity) {
+        userEntityDao.delete(entity);
     }
 
-    public static void update(UserEntity entity) {
-        daoSession.update(entity);
+    public static void updateUser(UserEntity entity) {
+        userEntityDao.update(entity);
     }
 }

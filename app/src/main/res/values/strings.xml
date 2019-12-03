@@ -1,3 +1,12 @@
 <resources>
     <string name="app_name">GreenDaoHope</string>
+    <string name="activity_error_occurred_explanation">发生意外错误。\n抱歉给您带来不便。</string>
+    <string name="activity_restart_app">重启应用</string>
+    <string name="activity_error_details_title">错误详情</string>
+    <string name="cancel">取消</string>
+    <string name="activity_error_details_copy">复制到剪贴板</string>
+    <string name="activity_error_details_copied">已复制到剪贴板</string>
+    <string name="error_info">错误信息</string>
+    <string name="btn_cancel">取消</string>
+    <string name="btn_ok">确认</string>
 </resources>

@@ -33,10 +33,10 @@ public class MainActivity extends BaseActivity {
         adapter.setOnItemClickListener(new BaseQuickAdapter.OnItemClickListener() {
             @Override
             public void onItemClick(BaseQuickAdapter adapter, View view, int position) {
-                if ("添加".equals(stringList.get(position))) {
-                    Navigator.getInstance().navigate2Add(MainActivity.this);
-                } else if ("列表".equals(stringList.get(position))) {
+                if ("列表".equals(stringList.get(position))) {
                     Navigator.getInstance().navigate2UserList(MainActivity.this);
+                }else if ("崩溃".equals(stringList.get(position))) {
+
                 }
             }
         });
@@ -47,6 +47,7 @@ public class MainActivity extends BaseActivity {
         stringList = new ArrayList<>();
         stringList.add("添加");
         stringList.add("列表");
+        stringList.add("崩溃");
     }
 
 }

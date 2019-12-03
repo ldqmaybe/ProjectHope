@@ -2,8 +2,9 @@
 <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
-    android:layout_height="match_parent"
+    android:layout_height="wrap_content"
     android:divider="@drawable/divider_line"
+    android:background="@color/white"
     android:showDividers="middle"
     android:orientation="vertical"
     android:paddingStart="@dimen/dp_10"
@@ -11,6 +12,7 @@
     android:paddingTop="@dimen/dp_40"
     tools:context="com.one.greendaohope.ui.UserDetailActivity">
     <LinearLayout
+        android:id="@+id/ll_content"
         android:layout_width="match_parent"
         android:orientation="horizontal"
         android:layout_height="@dimen/dp_40">
@@ -20,9 +22,9 @@
             android:layout_width="0dp"
             android:layout_weight="1"
             android:layout_height="match_parent"/>
-        <EditText
+        <TextView
             android:background="@null"
-            android:id="@+id/et_id"
+            android:id="@+id/tv_id"
             tools:text="124"
             android:gravity="center_vertical"
             android:layout_width="0dp"
@@ -86,4 +88,33 @@
             android:layout_weight="3"
             android:layout_height="match_parent"/>
     </LinearLayout>
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_gravity="bottom"
+        android:layout_marginTop="30dp"
+        android:layout_marginBottom="15dip"
+        android:gravity="center_horizontal">
+        <Button
+            android:id="@+id/bt_cancel"
+            android:layout_width="0dp"
+            android:layout_height="42dp"
+            android:layout_weight="1"
+            android:textSize="15sp"
+            android:gravity="center"
+            android:background="@drawable/bg_alert_dialog_left_button"
+            android:textColor="@color/txt_normal_black"
+            android:text="@string/btn_cancel"/>
+        <Button
+            android:id="@+id/bt_confirm"
+            android:layout_width="0dp"
+            android:layout_height="42dp"
+            android:layout_weight="1"
+            android:textSize="15sp"
+            android:gravity="center"
+            android:background="@drawable/bg_alert_dialog_right_button"
+            android:textColor="@color/colorPrimary"
+            android:text="@string/btn_ok"/>
+    </LinearLayout>
+
 </LinearLayout>

@@ -42,6 +42,14 @@
     </LinearLayout>
 
     <Button
+        android:id="@+id/btnUpdate"
+        android:layout_width="60dp"
+        android:layout_height="match_parent"
+        android:background="@color/colorPrimary"
+        android:text="修改"
+        android:textColor="@android:color/white" />
+
+    <Button
         android:id="@+id/btnDelete"
         android:layout_width="60dp"
         android:layout_height="match_parent"

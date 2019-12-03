@@ -14,9 +14,12 @@ public interface UserListContact {
        void loadAllDatasSuccess(List<UserEntity> userEntityList);
        void optionFail(String errMsg);
        void optionSuccess(String sucMsg);
+       void addSuccess(String sucMsg);
+       void updateSuccess(String sucMsg);
     }
     public interface Presenter{
         void loadAllDatas();
         void deleteUser(String phoneNo);
+        void saveOrUpdateUser(UserEntity userEntity, boolean isAdd);
     }
 }
