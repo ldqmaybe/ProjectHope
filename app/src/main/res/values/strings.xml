@@ -1,5 +1,5 @@
 <resources>
-    <string name="app_name">GreenDaoHope</string>
+    <string name="app_name">ProjectHope</string>
     <string name="activity_error_occurred_explanation">发生意外错误。\n抱歉给您带来不便。</string>
     <string name="activity_restart_app">重启应用</string>
     <string name="activity_error_details_title">错误详情</string>

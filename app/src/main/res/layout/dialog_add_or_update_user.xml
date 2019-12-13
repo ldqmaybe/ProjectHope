@@ -10,7 +10,7 @@
     android:paddingStart="@dimen/dp_10"
     android:paddingEnd="@dimen/dp_10"
     android:paddingTop="@dimen/dp_40"
-    tools:context="com.one.greendaohope.ui.UserDetailActivity">
+    tools:context="com.one.hope.ui.UserDetailActivity">
     <LinearLayout
         android:id="@+id/ll_content"
         android:layout_width="match_parent"

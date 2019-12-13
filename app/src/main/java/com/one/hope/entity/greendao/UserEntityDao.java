@@ -1,4 +1,4 @@
-package com.one.greendaohope.entity.greendao;
+package com.one.hope.entity.greendao;
 
 import android.database.Cursor;
 import android.database.sqlite.SQLiteStatement;

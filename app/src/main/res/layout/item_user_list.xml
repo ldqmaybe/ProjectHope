@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="utf-8"?>
-<com.one.greendaohope.widget.SwipeMenuLayout xmlns:android="http://schemas.android.com/apk/res/android"
+<com.one.hope.widget.SwipeMenuLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="wrap_content"
@@ -56,4 +56,4 @@
         android:background="#ff4a57"
         android:text="删除"
         android:textColor="@android:color/white" />
-</com.one.greendaohope.widget.SwipeMenuLayout>
+</com.one.hope.widget.SwipeMenuLayout>
